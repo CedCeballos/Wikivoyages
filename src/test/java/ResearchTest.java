@@ -24,7 +24,7 @@ public class ResearchTest {
     @Test
     public void DestinationResearchFromDestinationPage() {
         PrincipalPage principalPage = new PrincipalPage(driver);
-        principalPage.Research("Cameroun").searchInDestinationPage().Research("Paris");
+        principalPage.Research("Cameroun").header.Research("Paris");
 
         /* Explication du fonctionnement de la ligne de code 26
 
@@ -41,7 +41,7 @@ public class ResearchTest {
     @Test
     public void HomePageFromDestinationPage(){
         PrincipalPage principalPage = new PrincipalPage(driver);
-        principalPage.Research("Cameroun").GoToNavigationPanel().returnHomePage();
+        principalPage.Research("Cameroun").navigationPanel.returnHomePage();
     }
 
     @After

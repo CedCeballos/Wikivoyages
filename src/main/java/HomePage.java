@@ -11,19 +11,15 @@ public class HomePage {
     @FindBy(id="firstHeading")
     private WebElement firstHeading;
 
+    public Header header;
+    public NavigationPanel navigationPanel;
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        header = new Header(driver);
+        navigationPanel = new NavigationPanel(driver);
         WebDriverWait wait10 = new WebDriverWait(driver, 10);
         wait10.until(ExpectedConditions.visibilityOf(firstHeading));
-    }
-
-    public Header searchInHomePage () {
-        return new Header(driver);
-    }
-
-    public NavigationPanel GoToNavigationPanel () {
-        return new NavigationPanel(driver);
     }
 }

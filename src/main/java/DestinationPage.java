@@ -10,19 +10,15 @@ public class DestinationPage {
 
     @FindBy(id="Comprendre")
     private WebElement Comprendre;
+    public Header header;
+    public NavigationPanel navigationPanel;
 
     public DestinationPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        header = new Header(driver);
+        navigationPanel = new NavigationPanel(driver);
         WebDriverWait wait10 = new WebDriverWait(driver, 10);
         wait10.until(ExpectedConditions.visibilityOf(Comprendre));
-    }
-
-    public Header searchInDestinationPage () {
-        return new Header(driver);
-    }
-
-    public NavigationPanel GoToNavigationPanel () {
-        return new NavigationPanel(driver);
     }
 }
